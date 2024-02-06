@@ -54,3 +54,13 @@ UPDATE animales set estado = 'triste' where tipo = 'dragon';
 -- esto tambien arroja error 1175
 UPDATE animales set estado = 'triste' where id = 5;
 SELECT * FROM animales;
+
+-- Ejemplos de condicionales
+SELECT FirstName || ' ' || LastName AS Nombre, City AS Ciudad, Region AS [Areá Geografica]
+from Employees
+WHERE Country = 'USA'
+ORDER BY LastName DESC
+-- Distinct nos ayuda a mostrar los valores unicos de una columna
+select distinct Region from customers
+-- Like nos ayuda 
+select * from Customers where region like 'Europe'
