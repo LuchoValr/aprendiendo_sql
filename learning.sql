@@ -60,7 +60,27 @@ SELECT FirstName || ' ' || LastName AS Nombre, City AS Ciudad, Region AS [Areá 
 from Employees
 WHERE Country = 'USA'
 ORDER BY LastName DESC
+	
 -- Distinct nos ayuda a mostrar los valores unicos de una columna
 select distinct Region from customers
--- Like nos ayuda 
-select * from Customers where region like 'Europe'
+	
+-- Like nos ayuda a buscar textos que contengan una palabra, 
+-- los porcentajes significa que no importa lo que tenga que tenga antes o despues
+select * from Customers where region like '%Europe%'
+	
+-- IS NULL significa que nos va a mostrar aquellos valores que sean nulos en la columna fax
+select * from Customers where fax IS NULL
+
+-- IS NOT NULL significa que nos va a mostrar aquellos valores que no sean nulos en la columna fax
+select * from Customers where fax IS NOT NULL
+
+-- Podemos combinar ambas condiciones con un logico como AND
+select * from Customers where region like '%Europe%' and fax IS NOT NULL
+
+-- Condiciones con fechas
+select * from employees
+where HireDate >= '2014-01-01' and HireDate <= '2014-03-31'
+
+-- Usando Between
+select * from employees
+where HireDate between'2014-01-01' and '2014-03-31'
